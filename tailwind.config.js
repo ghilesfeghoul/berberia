@@ -6,7 +6,6 @@ module.exports = {
     './snippets/*.liquid',
     './templates/customers/*.liquid',
     './templates/*.liquid',
-    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {},
