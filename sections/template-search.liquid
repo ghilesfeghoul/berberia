@@ -1,0 +1,71 @@
+<div class="container mx-auto">
+  {% paginate search.results by section.settings.products_per_page %}
+    <h1 class="text-xl my-4 text-center">Search Results</h1>
+
+    <div class="flex justify-center items-center">
+      <form
+        action="{{ routes.search_url }}"
+        method="get"
+        class="border flex rounded">
+        <input
+          type="search"
+          name="q"
+          placeholder="Search"
+          value="{{ search.terms | escape }}"
+          class="px-4 py-2 md:w-80 w-full border-none">
+
+        <button type="submit" class="bg-gray-900 hover:bg-gray-700 text-white border px-4">Search</button>
+      </form>
+    </div>
+    {% if search.performed %}
+      {% if search.results.size > 0 %}
+        <div class="max-w-6xl mx-auto">
+          <p class="text-gray-500 text-center my-10">{{ search.results_count }} results for the search term {{ search.terms | escape }}</p>
+          <div class="grid grid-cols-1 md:grid-cols-{{ section.settings.columns }} gap-4">
+            {% for item in search.results %}
+              {% case item.object_type %}
+                {% when 'product' %}
+                {% render 'product-card', product_info: item %}
+            {% else %}
+
+              {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+
+      {% else %}
+        <div class="text-center my-4">
+          <p>No results found for the search term: {{ search.terms | escape }}. Try to use a different keyword</p>
+        </div>
+      {% endif %}
+    {% endif %}
+
+
+    {% render 'pagination', pagination: paginate %}
+  {% endpaginate %}
+</div>
+
+{% schema %}
+  {
+    "name": "Search Results",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "default": 10,
+        "min": 4,
+        "max": 16,
+        "step": 1,
+        "label": "Products per page"
+      }, {
+        "type": "range",
+        "id": "columns",
+        "default": 3,
+        "min": 2,
+        "max": 4,
+        "step": 1,
+        "label": "Columns to show"
+      }
+    ]
+  }
+{% endschema %}
