@@ -38,9 +38,10 @@
                   <a href="{{ item.url }}">
                     {% if item.image %}
                       <img
-                        src="{{ item.image | img_url: 'small' }}"
+                        src="{{ item.image | image_url: width: 100, height: 100 }}"
                         alt="{{ item.title | escape }}"
-                        class="w-20 h-20 object-cover border">
+                        class="w-20 h-20 object-cover border"
+                        loading="lazy">
                     {% else %}
                       {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
                     {% endif %}
@@ -112,22 +113,24 @@
 {% endif %}
 
 {% schema %}
-  {
-    "name": "Template Cart",
-    "blocks": [
-      {
-        "type": "subtotal",
-        "name": "Subtotal",
-        "limit": 1
-      }, {
-        "type": "update_button",
-        "name": "Update button",
-        "limit": 1
-      }, {
-        "type": "checkout_button",
-        "name": "Checkout button",
-        "limit": 1
-      }
-    ]
-  }
+{
+  "name": "Template Cart",
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "Subtotal",
+      "limit": 1
+    },
+    {
+      "type": "update_button",
+      "name": "Update button",
+      "limit": 1
+    },
+    {
+      "type": "checkout_button",
+      "name": "Checkout button",
+      "limit": 1
+    }
+  ]
+}
 {% endschema %}

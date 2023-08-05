@@ -17,34 +17,37 @@
   {% endpaginate %}
 </div>
 {% schema %}
-  {
-    "settings": [
-      {
-        "type": "range",
-        "id": "number_of_products",
-        "step": 1,
-        "min": 1,
-        "max": 6,
-        "label": "Products per page",
-        "default": 3
-      }, {
-        "type": "range",
-        "id": "number_of_cols",
-        "min": 1,
-        "max": 4,
-        "label": "Number of columns to display",
-        "default": 3
-      }, {
-        "type": "number",
-        "id": "number_of_mobile_cols",
-        "label": "Number of columns to display in mobile devices",
-        "default": 2
-      }, {
-        "type": "checkbox",
-        "id": "display_vendor",
-        "default": true,
-        "label": "Display vendor"
-      }
-    ]
-  }
+{
+  "settings": [
+    {
+      "type": "range",
+      "id": "number_of_products",
+      "step": 1,
+      "min": 1,
+      "max": 6,
+      "label": "Products per page",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "number_of_cols",
+      "min": 1,
+      "max": 4,
+      "label": "Number of columns to display",
+      "default": 3
+    },
+    {
+      "type": "number",
+      "id": "number_of_mobile_cols",
+      "label": "Number of columns to display in mobile devices",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "display_vendor",
+      "default": true,
+      "label": "Display vendor"
+    }
+  ]
+}
 {% endschema %}

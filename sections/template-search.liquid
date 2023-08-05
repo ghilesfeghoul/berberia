@@ -46,26 +46,27 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Search Results",
-    "settings": [
-      {
-        "type": "range",
-        "id": "products_per_page",
-        "default": 10,
-        "min": 4,
-        "max": 16,
-        "step": 1,
-        "label": "Products per page"
-      }, {
-        "type": "range",
-        "id": "columns",
-        "default": 3,
-        "min": 2,
-        "max": 4,
-        "step": 1,
-        "label": "Columns to show"
-      }
-    ]
-  }
+{
+  "name": "Search Results",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "default": 10,
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "label": "Products per page"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "default": 3,
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns to show"
+    }
+  ]
+}
 {% endschema %}

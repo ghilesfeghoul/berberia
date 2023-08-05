@@ -1,18 +1,17 @@
 {
-    "general": {
-      "404": {
-        "title": "Page non trouvée",
-        "subtext_html": "La page que vous recherchez n'existe pas ou n'existe plus"
+  "general": {
+    "404": {
+      "title": "Page non trouvée",
+      "subtext_html": "La page que vous recherchez n'existe pas ou n'existe plus"
+    },
+    "article": {
+      "comment": {
+        "message_success": "Votre commentaire a été ajouté avec succés",
+        "message_error": "En raison d'une erreur technique, votre message n'a pas été publié, veuillez réessayer plus tard",
+        "button_title": "Commenter"
       },
-      "article": {
-        "comment" : {
-          "message_success": "Votre commentaire a été ajouté avec succés",
-          "message_error": "En raison d'une erreur technique, votre message n'a pas été publié, veuillez réessayer plus tard",
-          "button_title": "Commenter"
-        },
-        "none": "Cet article ne contient pas de commentaires",
-        "impressions": "Ce qu'ils en pensent"
-      }
+      "none": "Cet article ne contient pas de commentaires",
+      "impressions": "Ce qu'ils en pensent"
     }
   }
-  
+}

@@ -17,8 +17,9 @@
 
                   <img
                     class="w-full h-full object-cover transition duration-1000 ease-in-out transform hover:scale-105"
-                    src="{{ collection_image | img_url: 'medium' }}"
-                    alt="{{ collection.title | escape }}">
+                    src="{{ collection_image | image_url: width: 240, height: 240 }}"
+                    alt="{{ collection.title | escape }}"
+                    loading="lazy">
                 </div>
               </a>
 
@@ -36,15 +37,15 @@
 
 
 {% schema %}
-  {
-    "name": "Template List Collections",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "default": "Collections",
-        "label": "Title"
-      }
-    ]
-  }
+{
+  "name": "Template List Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Collections",
+      "label": "Title"
+    }
+  ]
+}
 {% endschema %}

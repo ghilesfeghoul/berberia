@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+{{ 'swipper.min.css' | asset_url | stylesheet_tag }}
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
@@ -147,7 +146,7 @@
             </div>
 
             {% when 'checkout_button' %}
-            <div id="button-{{section.id}}" class="my-3">
+            <div id="button-{{ section.id }}" class="my-3">
               <button
                 {% if selected_variant.available == false %}
                 disabled
