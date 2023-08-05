@@ -1,5 +1,5 @@
-{{ 'swipper.min.css' | asset_url | stylesheet_tag }}
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+{{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'swiper.min.js' | asset_url }} defer"></script>
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 <style>
@@ -287,16 +287,22 @@
 </script>
 
 <script>
-  const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
 
-    pagination: {
-      el: '.swiper-pagination'
-    },
+        pagination: {
+          el: '.swiper-pagination'
+        },
 
-    navigation: {
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next'
+        navigation: {
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next'
+        }
+      })
+    } catch (error) {
+      console.log(error);
     }
   })
 </script>
